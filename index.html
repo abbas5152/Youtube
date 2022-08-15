@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            margin-left: 20%;
+            margin-top: 10%;
+        }
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+body{
+    position: relative;
+    background: #f0f0f0;
+    font-family: 'roboto', sans-serif;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 2.5vw;
+}
+
+.toggle-btn{
+    width: 20px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-btn span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #979797;
+}
+
+.toggle-btn span:nth-child(1){
+    top: 0;
+}
+
+.toggle-btn span:nth-child(3){
+    top: 100%;
+}
+
+.logo{
+    height: 30px;
+    margin: -10px 30px 0;
+}
+
+.search-box{
+    position: relative;
+    max-width: 500px;
+    width: 50%;
+    height: 35px;
+    display: flex;
+}
+
+.search-bar{
+    width: 85%;
+    height: 100%;
+    border: 2px solid #dbdbdb;
+    padding: 0 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.search-btn{
+    width: 15%;
+    height: 100%;
+    background: #f0f0f0;
+    border: 2px solid #dbdbdb;
+    padding: 5px 0;
+    border-left: none;
+}
+
+.search-btn img{
+    height: 100%;
+}
+
+.user-options{
+    height: 35px;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.user-options .icon{
+    height: 80%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.user-dp{
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-dp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.side-bar{
+    position: fixed;
+    top: 60px;
+    left: 0;
+    min-width: 250px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background: #fff;
+    padding-right: 10px;
+}
+
+.links{
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #242424;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.links img{
+    height: 25px;
+    margin-right: 20px;
+}
+
+.links:hover,
+.links.active{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.seperator{
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+.filters{
+    position: fixed;
+    left: 250px;
+    top: 60px;
+    width: calc(100% - 250px);
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.filters::-webkit-scrollbar{
+    display: none;
+}
+
+.filter-options{
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #f0f0f0;
+    border: 1px solid #dbdbdb;
+    text-transform: capitalize;
+    margin-right: 10px;
+    color: #242424;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.filter-options.active{
+    color: #fff;
+    background: #242424;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" class="logo" alt="">
+        <div class="search-box">
+            <input type="text" class="search-bar" placeholder="search">
+            <button onclick="search()" class="search-btn">
+                <img src="https://t4.ftcdn.net/jpg/01/09/46/77/240_F_109467785_eeYWH2tY4CnkDl9BtuYO6hWjk7hH0okU.jpg" alt=""></button>
+                <img src="https://cdn-icons-png.flaticon.com/128/107/107737.png" alt="">
+        </div>
+        <div class="user-options">
+            <img src="https://cdn-icons-png.flaticon.com/128/1159/1159798.png" class="icon" alt="">
+            <img src="https://cdn-icons.flaticon.com/png/512/2931/premium/2931804.png?token=exp=1654021376~hmac=3f72cf220d856ed61a06dac860f39f08" class="icon" alt="">
+            <img src="https://t4.ftcdn.net/jpg/01/08/24/99/240_F_108249947_UMBLfSCpTWU6AGiUz0F7a524koG3eO0z.jpg" class="icon" alt="">
+            <div class="user-dp">
+                <img src="https://yt3.ggpht.com/yti/APfAmoF_XAOWnn84rgT3ZlBueL2unCA1twvHecJKVQ=s88-c-k-c0x00ffffff-no-rj-mo" alt="">
+            </div>
+        </div>
+    </nav>
+    <div class="side-bar">
+        <a href="#" class="links active"><img src="img/home.PNG" alt="">home</a>
+        <a href="#" class="links"><img src="img/explore.PNG" alt="">explore</a>
+        <a href="#" class="links"><img src="img/subscription.PNG" alt="">subscription</a>
+        <hr class="seperator">
+        <a href="#" class="links"><img src="img/library.PNG" alt="">library</a>
+        <a href="#" class="links"><img src="img/history.PNG" alt="">history</a>
+        <a href="#" class="links"><img src="img/your-video.PNG" alt="">your video</a>
+        <a href="#" class="links"><img src="img/watch-later.PNG" alt="">watch leater</a>
+        <a href="#" class="links"><img src="img/liked video.PNG" alt="">like video</a>
+        <a href="#" class="links"><img src="img/show more.PNG" alt="">show more</a>
+    </div>
+    <div class="filters">
+        <button class="filter-options active">all</button>
+        <button class="filter-options">CSS</button>
+        <button class="filter-options">web development</button>
+        <button class="filter-options">python</button>
+        <button class="filter-options">entertainment</button>
+        <button class="filter-options">marvel</button>
+        <button class="filter-options">javascript</button>
+        <button class="filter-options">artificial intelligence</button>
+        <button class="filter-options">machine learning</button>
+        <button class="filter-options">trending</button>
+    </div>
+    <!-- <input type="text" id="search">
+    <button onclick="search()">Search </button> -->
+    <div id="result">
+
+    </div>
+</body>
+</html>
+<script>
+    let api="AIzaSyCi1g12Eaxriq9cee-bCrhL2hG9T3pO06k";
+
+   async function pelethi(){
+        let urll= `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=IN&key=${api}`;
+        let ress= await fetch(urll)
+        let dd= await ress.json();
+        append(dd.items)
+    }
+    pelethi();
+    let  search= async ()=>{
+        var input=document.querySelector(".search-bar").value;
+        let url=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${input}&key=${api}`
+          let res= await fetch(url);
+          let data = await res.json();
+        //   console.log(data);
+        append(data.items)
+    }
+    let append = async(data) =>{
+        let box=document.querySelector("#result");
+        data.forEach(({id:{videoId},snippet:{title} })=>{
+            // console.log(videoId,title)
+            var div=document.createElement("div")
+            let iframe=document.createElement("iframe");
+            iframe.src=`https://www.youtube.com/embed/${videoId}`
+            iframe.allow="fullscreen";
+            let ti=document.createElement("h2");
+            ti.innerText=title;
+            div.append(iframe,ti)
+            let video={
+                 title,
+                 videoId,
+             };
+            //  console.log(video)
+            // playvideo(video)
+            div.onclick= function() {
+             playvideo(video);
+                 };
+              box.append(div);
+        })
+    }
+         let playvideo= (video)=>{
+          localStorage.setItem("video",JSON.stringify(video));
+          window.location.href="video.html";
+         }
+</script>
+
+<!-- <iframe
+ width="560"
+  height="315"
+   src="https://www.youtube.com/embed/gjWE4g3XKq8"
+    title="YouTube video player"
+     frameborder="0" 
+     allow="accelerometer; 
+     autoplay; clipboard-write; 
+     encrypted-media;
+      gyroscope;
+      picture-in-picture" 
+      allowfullscreen></iframe> -->

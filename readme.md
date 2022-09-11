@@ -1,9 +1,9 @@
 # Inspired from Youtube.com
 
 This is personal project and accociated with Masai Shcool.
-Our main objective is to complete all main functionality of Youtube.com, such as User Debouncing,Search bar,Ads free application and show trending videos on top in a given time constraints.
+My main objective is to complete all main functionality of Youtube.com, such as Debouncing,Search bar,Ads free application and show trending videos on top in a given time constraints.
 
-- [Click here](https://gregarious-tiramisu-8ee5da.netlify.app/) to see preview of our project.
+- [Click here](https://gregarious-tiramisu-8ee5da.netlify.app/) to see preview of my project.
 
 Youtube.com is one of the famous platform where you can watch videos of all categories.You can create your own channel and upload the videos too.So In this I tried to make replica of Youtube using Google Youtube api.
 

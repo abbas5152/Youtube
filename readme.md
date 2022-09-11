@@ -27,15 +27,15 @@ Youtube.com is one of the famous platform where you can watch videos of all cate
 - Videoplaying Page
 
   <h4>Homepage</h4>
- ![ScreenShot currently unavailable](https://github.com/abbas5152/Project-Blueflyclone/blob/main/homepage1.JPG)
+ ![ScreenShot currently unavailable](https://github.com/abbas5152/Youtube/blob/main/utube1.JPG)
  
- ![ScreenShot currently unavailable](https://github.com/abbas5152/Project-Blueflyclone/blob/main/homepage2.JPG)
+ ![ScreenShot currently unavailable](https://github.com/abbas5152/Youtube/blob/main/utube2.JPG)
 
 
   <hr>
   <h4>VideoPage</h4>
   
- ![ScreenShot currently unavailable](https://github.com/abbas5152/Project-Blueflyclone/blob/main/payment.JPG)
+ ![ScreenShot currently unavailable](https://github.com/abbas5152/Youtube/blob/main/utube3.JPG)
 
 
 

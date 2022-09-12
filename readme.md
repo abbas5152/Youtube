@@ -1,6 +1,6 @@
 # Inspired from Youtube.com
 
-This is personal project and associated with Masai Shcool.
+This is personal project and associated with Masai School.
 My main objective is to complete all main functionality of Youtube.com, such as Debouncing,Search bar,Ads free application and show trending videos on top in a given time constraints.
 
 - [Click here](https://gregarious-tiramisu-8ee5da.netlify.app/) to see preview of my project.
